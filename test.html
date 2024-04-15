@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="test.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+           <a href=""> <img src="images/hotel logo.svg" alt="HOtel"></a>
+        <a class="logo" href="" >ISBN BD</a>
+
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a href="index.html" class="active x">Home</a>
+                </li>
+                <li>
+                    <a href="" class="x">Hotels</a>
+                </li>
+                <li>
+                    <a href="deposit.html" class="x">Deposit</a>
+                </li>
+                <li>
+                    <a href="about.html" class="x">About</a>
+                </li>
+                <li>
+                    <a href="contuct_us.html" class="x">Contact Us</a>
+                </li>
+                <li>
+                    <a href="userDetails.html" class="x">Profile</a>
+                </li>
+                <li>
+                    <a href="login.html" class="x">Login</a>
+                </li>
+                <li>
+
+                    <a class="x" id="logout-btn" onclick="handlelogOut()">logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.querySelector(".hamburger");
+    const navBar = document.querySelector(".nav-bar");
+    const navLinks = document.querySelectorAll('.nav-bar ul li a');
+
+    hamburger.onclick = function() {
+        navBar.classList.toggle("active");
+    };
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            // Remove 'active' class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+            // Add 'active' class to the clicked link
+            this.classList.add('active');
+            // Allow default link behavior
+            if (!this.getAttribute('href') || this.getAttribute('href') === '#') {
+                event.preventDefault(); // Prevent default link behavior only for non-anchor links
+            }
+        });
+    });
+
+    // Toggle active class on button click
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Toggle active class
+            this.classList.toggle('active');
+        });
+    });
+});
+
+    </script>
+
+                          
+<!-- table start -->
+<div class="d-flex justify-content-center align-items-center">
+<div class="col-md-6">
+  <h1>;haoehjowfhurehjdhfldkajsfgweiufhkjhfsdkjfhsahhfksdhdhkj</h1>
+</div>
+<div class="col-md-6">
+<table>
+<thead>
+	<tr>
+
+		<th>S.No</th>
+
+		<th>Name</th>
+
+		<th>Age</th>
+
+		<th>PIN</th>
+
+		<th>Country</th>
+
+	</tr>
+</thead>
+<tbody id="table-body">
+
+</tbody>
+	<tr>
+
+		<td>1</td>
+
+		<td>Sam</td>
+
+		<td>28</td>
+
+		<td>23456</td>
+
+		<td>India</td>
+
+	</tr>
+
+	<tr>
+
+		<td>2</td>
+
+		<td>Gam</td>
+
+		<td>38</td>
+
+		<td>23456</td>
+
+		<td>Australia</td>
+
+	</tr>
+
+	<tr>
+
+		<td>3</td>
+
+		<td>Ram</td>
+
+		<td>28</td>
+
+		<td>23756</td>
+
+		<td>Nepal</td>
+
+	</tr>
+
+	<tr>
+
+		<td>4</td>
+
+		<td>Adam</td>
+
+		<td>21</td>
+
+		<td>23456</td>
+
+		<td>USA</td>
+
+	</tr>
+
+	<tr>
+
+		<td>5</td>
+
+		<td>Cole</td>
+
+		<td>44</td>
+
+		<td>93456</td>
+
+		<td>UK</td>
+
+	</tr>
+
+	<tr>
+
+		<td>6</td>
+
+		<td>Jame</td>
+
+		<td>50</td>
+
+		<td>73456</td>
+
+		<td>Belgium</td>
+
+	</tr>
+
+</table>
+
+</div>
+</div>
+<!-- table end  -->
+
+
+<br />
+<footer class="footer">
+  <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+  </div>
+  <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link"
+              href="https://www.facebook.com/profile.php?id=100070030140517" target="_blank">
+              <ion-icon name="logo-facebook"></ion-icon>
+          </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/" target="_blank">
+              <ion-icon name="logo-twitter"></ion-icon>
+          </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/ismayel-shekh/"
+              target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
+          </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/"
+              target="_blank">
+              <ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
+  </ul>
+  <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+  </ul>
+  <p>&copy;2024 Ismayel Shekh | All Rights Reserved</p>
+</footer>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"></script>
+<script src="contact_us.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="logout.js"></script>
+<script src="test.js"></script>
+
+</body>
+
+</html>

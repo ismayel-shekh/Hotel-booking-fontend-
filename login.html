@@ -1,0 +1,255 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="auth.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+           <a href=""> <img src="images/hotel logo.svg" alt="HOtel"></a>
+        <a class="logo" href="" >ISBN BD</a>
+    
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar" id="toggleNav">
+            <ul>
+                <li>
+                    <a href="index.html" class="x">Home</a>
+                </li>
+                <li>
+                    <a href="allhotel.html" class="x">Hotels</a>
+                </li>
+                <li id="deposit-link" style="display: none;">
+                    <a href="deposit.html" class="x">Deposit</a>
+                </li>
+                <li>
+                    <a href="about.html" class="x">About</a>
+                </li>
+                <li>
+                    <a href="contuct_us.html" class="x">Contact Us</a>
+                </li>
+                <li id="profile-link" style="display: none;">
+                    <a href="userDetails.html" class="x">Profile</a>
+                </li>
+                <li  id="login-link">
+                    <a href="login.html" class="x">Login</a>
+                </li>
+                <li id="logout-link" style="display: none;">
+    
+                    <a class="x" id="logout-btn" onclick="handlelogOut()">logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggleNav = document.getElementById("toggleNav");
+      const carouselWrapper = document.getElementById("carouselWrapper");
+      const dropDeg = document.getElementById("drop-deg");
+    
+      toggleNav.addEventListener("click", function() {
+        if (carouselWrapper.style.display === "block" || carouselWrapper.style.display === "") {
+          carouselWrapper.style.display = "none";
+        } else {
+          carouselWrapper.style.display = "block";
+        }
+    
+        if (dropDeg.style.display === "block" || dropDeg.style.display === "") {
+          dropDeg.style.display = "none";
+        } else {
+          dropDeg.style.display = "block";
+        }
+      });
+    });
+    
+    document.addEventListener("DOMContentLoaded", function() {
+          // Check if user is logged in (you can use your own logic here)
+          const isLoggedIn = localStorage.getItem('user_id') !== null;
+    
+          // Get profile and logout links
+          const profileLink = document.getElementById("profile-link");
+          const logoutLink = document.getElementById("logout-link");
+          const depositLink = document.getElementById("deposit-link");
+    
+          // Get login link
+          const loginLink = document.getElementById("login-link");
+    
+          // Show profile and logout links if user is logged in
+          if (isLoggedIn) {
+              profileLink.style.display = "block";
+              logoutLink.style.display = "block";
+              depositLink.style.display = "block";
+              loginLink.style.display = "none"; // Hide login link
+          } else {
+              profileLink.style.display = "none";
+              logoutLink.style.display = "none";
+              depositLink.style.display = "none";
+              loginLink.style.display = "block"; // Show login link
+          }
+      });
+    
+        document.addEventListener("DOMContentLoaded", function() {
+        const hamburger = document.querySelector(".hamburger");
+        const navBar = document.querySelector(".nav-bar");
+        const navLinks = document.querySelectorAll('.nav-bar ul li a');
+    
+        hamburger.onclick = function() {
+            navBar.classList.toggle("active");
+        };
+    
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                // Remove 'active' class from all links
+                navLinks.forEach(link => link.classList.remove('active'));
+                // Add 'active' class to the clicked link
+                this.classList.add('active');
+                // Allow default link behavior
+                if (!this.getAttribute('href') || this.getAttribute('href') === '#') {
+                    event.preventDefault(); // Prevent default link behavior only for non-anchor links
+                }
+            });
+        });
+    
+        // Toggle active class on button click
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Toggle active class
+                this.classList.toggle('active');
+            });
+        });
+    });
+    
+        </script>
+
+
+
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <p id="error" class="text-danger"></p>
+                <input id="username" type="text" placeholder="User name" required>
+                <input id="email" type="email" placeholder="Email" required>
+                <input id="first_name" type="text" placeholder="First Name" required>
+                <input id="last_name" type="text" placeholder="Last Name" required>
+                <input id="mobile_no" type="number" placeholder="Mobile Number" required>
+                <input id="password" type="password" placeholder="Password" required>
+                <input id="confirm_password" type="password" placeholder="Confirm Password" required>
+                <button type="submit" onclick="handleRegistration(event)">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <br>
+                <br>
+                <br>
+
+                <input id="login-username" type="text" placeholder="User name" required>
+                <input id="login-password" type="password" placeholder="Password" required>
+                <!-- <a href="#">Forget Your Password?</a> -->
+                <br>
+                <br>
+                <button onclick="handleLogin(event)">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+      <div class="waves">
+          <div class="wave" id="wave1"></div>
+          <div class="wave" id="wave2"></div>
+          <div class="wave" id="wave3"></div>
+          <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="social-icon">
+          <li class="social-icon__item"><a class="social-icon__link"
+                  href="https://www.facebook.com/profile.php?id=100070030140517" target="_blank">
+                  <ion-icon name="logo-facebook"></ion-icon>
+              </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/" target="_blank">
+                  <ion-icon name="logo-twitter"></ion-icon>
+              </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/ismayel-shekh/"
+                  target="_blank">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+              </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/"
+                  target="_blank">
+                  <ion-icon name="logo-instagram"></ion-icon>
+              </a></li>
+      </ul>
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="index.html">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="about.html">About</a></li>
+        <li class="menu__item"><a class="menu__link" href="allhotel.html">Services</a></li>
+        <li class="menu__item"><a class="menu__link" href="about.html">Team</a></li>
+        <li class="menu__item"><a class="menu__link" href="contuct_us.html">Contact</a></li>
+
+    </ul>
+      <p>&copy;2024 Ismayel Shekh | All Rights Reserved</p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+  <script src="contact_us.js"></script>
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="logout.js"></script>
+
+</body>
+
+</html>
+
+
+
