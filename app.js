@@ -50,19 +50,40 @@ const loadcatagory = () => {
     .then(data => {
         data.forEach((item) => {
             console.log(item)
-            const parent = document.getElementById("drop-deg");
-            const li = document.createElement("li");
-            li.classList.add("btn-list");
-            li.innerHTML =`
-            <li class="btn btn-danger" onclick="loadhotels('${item.name}')" > ${item.name} </li>
-            `
+            const parent = document.getElementById("buttons");
+            const li = document.createElement("button");
+            li.classList.add("button-value");
+            li.textContent = item.name;
+            li.onclick = () => {
+                filterProduct(item.name);
+                loadhotels(item.name);
+              };
+              
             parent.appendChild(li);
+
         })
     })
 }
 
+function filterProduct(value) {
+    console.log("hellow bro")
+    //Button class code
+    let buttons = document.querySelectorAll(".button-value");
+    buttons.forEach((button) => {
+      //check if value equals innerText
+      if (value.toUpperCase() == button.innerText.toUpperCase()) {
+        button.classList.add("active");
+      } else {
+        button.classList.remove("active");
+      }
+    });
+  
+  }
+
+  
+
 const handleSearch = () => {
-    const value = document.getElementById("search").value;
+    const value = document.getElementById("search-input").value;
     loadhotels(value)
 }
 

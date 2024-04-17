@@ -136,7 +136,18 @@
   }
   }
 
-  
+  .media-body h3{
+    color: #4c49ea;
+    font-weight: bold;
+  }
+  .media-body li{
+    font-size:large;
+    font-weight: bold;
+
+  }
+  .media-body p{
+    color: #3a1616;
+  }
   .room figure .overlap-text {
     /* z-index: 99; */
     /* position: absolute; */

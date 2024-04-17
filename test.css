@@ -120,154 +120,105 @@ color: rgb(253, 1, 1);
 
 
 /* main */
-
-.ag-format-container {
-  width: 1142px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #f5f8ff;
+}
+.wrapper {
+  width: 95%;
   margin: 0 auto;
 }
-
-
-body {
-  background-color: #000;
-}
-.ag-courses_box {
-  display: -webkit-box;
-  display: -ms-flexbox;
+#search-containernew {
+  margin: 1em 0;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-
-  padding: 50px 0;
+  justify-content: center;
 }
-.ag-courses_item {
-  -ms-flex-preferred-size: calc(33.33333% - 30px);
-  flex-basis: calc(33.33333% - 30px);
-
-  margin: 0 15px 30px;
-
-  overflow: hidden;
-
-  border-radius: 28px;
+#search-inputnew {
+  background-color: transparent;
+  width: 40%;
+  border-bottom: 2px solid #110f29;
+  padding: 1em 0.3em;
 }
-.ag-courses-item_link {
-  display: block;
-  padding: 30px 20px;
-  background-color: #121212;
-
-  overflow: hidden;
-
-  position: relative;
+#search-inputnew:focus {
+  border-bottom-color: #6759ff;
 }
-.ag-courses-item_link:hover,
-.ag-courses-item_link:hover .ag-courses-item_date {
-  text-decoration: none;
-  color: #FFF;
+#searchnew {
+  padding: 1em 2em;
+  margin-left: 1em;
+  background-color: #6759ff;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-top: 0.5em;
 }
-.ag-courses-item_link:hover .ag-courses-item_bg {
-  -webkit-transform: scale(10);
-  -ms-transform: scale(10);
-  transform: scale(10);
+.button-value {
+  border: 2px solid #6759ff;
+  padding: 1em 2.2em;
+  border-radius: 3em;
+  background-color: transparent;
+  color: #6759ff;
+  cursor: pointer;
 }
-.ag-courses-item_title {
-  min-height: 87px;
-  margin: 0 0 25px;
-
-  overflow: hidden;
-
-  font-weight: bold;
-  font-size: 30px;
-  color: #FFF;
-
-  z-index: 2;
-  position: relative;
+.active {
+  background-color: #6759ff;
+  color: #ffffff;
 }
-.ag-courses-item_date-box {
-  font-size: 18px;
-  color: #FFF;
-
-  z-index: 2;
-  position: relative;
+#products {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 1.5em;
+  padding: 2em 0;
 }
-.ag-courses-item_date {
-  font-weight: bold;
-  color: #f9b234;
-
-  -webkit-transition: color .5s ease;
-  -o-transition: color .5s ease;
-  transition: color .5s ease
+.card {
+  background-color: #ffffff;
+  max-width: 18em;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
 }
-.ag-courses-item_bg {
-  height: 128px;
-  width: 128px;
-  background-color: #f9b234;
-
-  z-index: 1;
-  position: absolute;
-  top: -75px;
-  right: -75px;
-
-  border-radius: 50%;
-
-  -webkit-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
+.image-container {
+  text-align: center;
 }
-.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-  background-color: #3ecd5e;
+img {
+  max-width: 100%;
+  object-fit: contain;
+  height: 15em;
 }
-.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-  background-color: #e44002;
+.container {
+  padding-top: 1em;
+  color: #110f29;
 }
-.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-  background-color: #952aff;
+.container h5 {
+  font-weight: 500;
 }
-.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-  background-color: #cd3e94;
+.hide {
+  display: none;
 }
-.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-  background-color: #4c49ea;
-}
-
-
-
-@media only screen and (max-width: 979px) {
-  .ag-courses_item {
-    -ms-flex-preferred-size: calc(50% - 30px);
-    flex-basis: calc(50% - 30px);
+@media screen and (max-width: 720px) {
+  img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 10em;
   }
-  .ag-courses-item_title {
-    font-size: 24px;
+  .card {
+    max-width: 10em;
+    margin-top: 1em;
+  }
+  #products {
+    grid-template-columns: auto auto;
+    grid-column-gap: 1em;
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .ag-format-container {
-    width: 96%;
-  }
 
-}
-@media only screen and (max-width: 639px) {
-  .ag-courses_item {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-  }
-  .ag-courses-item_title {
-    min-height: 72px;
-    line-height: 1;
-
-    font-size: 24px;
-  }
-  .ag-courses-item_link {
-    padding: 22px 40px;
-  }
-  .ag-courses-item_date-box {
-    font-size: 16px;
-  }
-}
-
+/* mainsetion end  */
 /* footer */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
@@ -426,11 +377,16 @@ body {
      margin-top: 18px;
      font-size: 18px;
 }
-
+#buttons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
 button{
     font-size: 18px;
     margin-top: 25px;
-
+ 
     color: white;
     border: none;
     padding: 9px 20px;
@@ -591,212 +547,3 @@ button{
 
 
 /* profile */
-.ui-w-80 {
-  width : 80px !important;
-  height: auto;
-}
-
-.btn-default {
-  border-color: rgba(24, 28, 33, 0.1);
-  background  : rgba(0, 0, 0, 0);
-  color       : #4E5155;
-}
-
-label.btn {
-  margin-bottom: 0;
-}
-
-.btn-outline-primary {
-  border-color: #26B4FF;
-  background  : transparent;
-  color       : #26B4FF;
-}
-
-.btn {
-  cursor: pointer;
-}
-
-.text-light {
-  color: #babbbc !important;
-}
-
-.btn-facebook {
-  border-color: rgba(0, 0, 0, 0);
-  background  : #3B5998;
-  color       : #fff;
-}
-
-.btn-instagram {
-  border-color: rgba(0, 0, 0, 0);
-  background  : #000;
-  color       : #fff;
-}
-
-.card {
-  background-clip: padding-box;
-  box-shadow     : 0 1px 4px rgba(24, 28, 33, 0.012);
-}
-
-.row-bordered {
-  overflow: hidden;
-}
-
-.account-settings-fileinput {
-  position  : absolute;
-  visibility: hidden;
-  width     : 1px;
-  height    : 1px;
-  opacity   : 0;
-}
-
-.account-settings-links .list-group-item.active {
-  font-weight: bold !important;
-}
-
-html:not(.dark-style) .account-settings-links .list-group-item.active {
-  background: transparent !important;
-}
-
-.account-settings-multiselect~.select2-container {
-  width: 100% !important;
-}
-
-.light-style .account-settings-links .list-group-item {
-  padding     : 0.85rem 1.5rem;
-  border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-.light-style .account-settings-links .list-group-item.active {
-  color: #4e5155 !important;
-}
-
-.material-style .account-settings-links .list-group-item {
-  padding     : 0.85rem 1.5rem;
-  border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-.material-style .account-settings-links .list-group-item.active {
-  color: #4e5155 !important;
-}
-
-.dark-style .account-settings-links .list-group-item {
-  padding     : 0.85rem 1.5rem;
-  border-color: rgba(255, 255, 255, 0.03) !important;
-}
-
-.dark-style .account-settings-links .list-group-item.active {
-  color: #fff !important;
-}
-
-.light-style .account-settings-links .list-group-item.active {
-  color: #4E5155 !important;
-}
-
-.light-style .account-settings-links .list-group-item {
-  padding     : 0.85rem 1.5rem;
-  border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-/* table sart */
-/* *{
-
-	margin: 0;
-
-	padding: 0;
-
-	font-family: arial;
-
-	box-sizing: border-box;
-
-} */
-
-body{
-
-	/* height: 100vh; */
-
-	/* display: grid; */
-
-	/* place-items: center; */
-
-	background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.6)), url(image.jpg);
-
-	/* background-size: 100% 100%; */
-
-	/* background-repeat: no-repeat; */
-
-}
-
-table{
-
-	width: 600px;
-
-	box-shadow: -1px 12px 12px -6px rgba(0,0,0,0.5);
-
-}
-
-table, td, th{
-
-	padding: 20px;
-
-	border: 1px solid lightgray;
-
-	border-collapse: collapse;
-
-	text-align: center;
-
-	cursor: pointer;
-
-}
-
-td{
-
-	font-size: 18px;
-
-}
-
-th{
-
-	background-color: blue;
-
-	color: white;
-
-}
-
-tr:nth-child(odd){
-
-	background-color: lightblue;
-
-}
-
-tr:nth-child(odd):hover{
-
-	background-color: dodgerblue;
-
-	color: white;
-
-	transform: scale(1.5);
-
-	transition: transform 300ms ease-in;
-
-}
-
-tr:nth-child(even){
-
-	background-color: #ededed;
-
-}
-
-tr:nth-child(even):hover{
-
-	background-color: lightgray;
-
-	transform: scale(1.5);
-
-	transition: transform 300ms ease-in;
-
-
-}
-
-
-
-/* end table  */

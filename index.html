@@ -13,8 +13,8 @@
 <body>
   <header>
     <div class="logo">
-       <a href=""> <img src="images/hotel logo.svg" alt="HOtel"></a>
-    <a class="logo" href="" >ISBN BD</a>
+       <a href="/"> <img src="images/hotel logo.svg" alt="HOtel"></a>
+    <a class="logo" href="/" >ISBN BD</a>
 
     </div>
     <div class="hamburger">
@@ -25,7 +25,7 @@
     <nav class="nav-bar" id="toggleNav">
         <ul>
             <li>
-                <a href="index.html" class=" x">Home</a>
+                <a href="index.html" class=" x active">Home</a>
             </li>
             <li>
                 <a href="allhotel.html" class="x">Hotels</a>
@@ -53,6 +53,28 @@
     </nav>
 </header>
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const currentPage = window.location.pathname; // Get the current page URL path
+  const baseURL = window.location.origin; // Get the base URL of the website
+
+  // Get all navigation links
+  const navItems = document.querySelectorAll('.x');
+
+  // Loop through each navigation item
+  navItems.forEach(item => {
+    const href = item.getAttribute('href'); // Get the href attribute of the navigation item
+
+    // Check if the href attribute matches the current page URL path
+    if (href === currentPage || href === baseURL + currentPage) {
+      item.classList.add('active'); // Add "active" class to the matching navigation item
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  
+});
+
 
 document.addEventListener("DOMContentLoaded", function() {
   const toggleNav = document.getElementById("toggleNav");
@@ -170,15 +192,33 @@ document.addEventListener("DOMContentLoaded", function() {
 <div class="hotels-container row justify-content-center">
     <div class="col-md-12">
         <h1 class="title"> TOP RATED HOTELS</h1>
-        <div class="d-flex align-items-center justify-content-center">
+        <!-- <div class="d-flex align-items-center justify-content-center">
             <input id="search" type="text" placeholder="Search..." class="form-control me-2">
             <button onclick="handleSearch()" class="btn btn-primary">Search</button>
-        </div>
+        </div> -->
     </div>
 </div>
+
+<div class="wrapper">
+  <div id="search-container">
+    <input
+      type="search"
+      id="search-input"
+      placeholder="Search Hotel name here.."
+    />
+    <button onclick="handleSearch()" id="search">Search</button>
+  </div>
+  <div id="buttons">
+
+    <a href="/" style="text-decoration: none;" ">
+      <button class="button-value" onclick="filterProduct('All')">All</button>
+    </a>
+  </div>
+
+
 <h1><hr></h1>
-<div class="hotels-container row d-flex justify-content-center">
-<div class="col-md-12 text-center">
+<!-- <div class="hotels-container row d-flex justify-content-center">
+<div class="col-md-12 text-center"> -->
 <!-- <div class="dropdown">
 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 Catagory
@@ -188,16 +228,16 @@ Catagory
 </div> -->
 
   
-<div class="col-md-10">
+<!-- <div class="col-md-10"> -->
 <!-- <input id="search" type="text" placeholder="search..." />
 <button onclick="handleSearch()">Search</button> -->
-<div class="filters">
+<!-- <div class="filters">
     <ul id="drop-deg" >
       <li class="btn-list" role="button" data-filter=""><a class="btn btn-danger " href="/" style="text-decoration: none;;">All</a></li>
       
       
     </ul>
-  </div>
+  </div> -->
 </div>
 <div id="hotels" class="hotels mt-5 d-flex flex-wrap gap-5 justify-content-center align-items-center" >
 <div id="nodata" class="nodata">
@@ -353,15 +393,75 @@ Catagory
         <p>
           Welcome to our hotel booking website, your gateway to effortless travel planning and unforgettable experiences. With a vast selection of accommodations worldwide, we cater to every traveler's needs and preferences. Our user-friendly interface allows you to browse, compare, and book hotels with ease, ensuring a seamless booking process. Whether you seek luxury resorts, cozy boutique hotels, or budget-friendly stays, we have options for every budget and taste. Enjoy peace of mind with our secure booking platform and transparent pricing policies. Need assistance? Our dedicated customer support team is available 24/7 to assist you at every step of your journey. Trust us to turn your travel dreams into reality, one reservation at a time. Start exploring and unlock a world of possibilities with our hotel booking website.
         </p>
-        <button type="submit" class="bg-danger" ><a href="contuct_us.html"  style="text-decoration: none; color: white;">Learn More</a></button>
+        <button  type="submit" class="bg-danger buttonx" ><a href="contuct_us.html"  style="text-decoration: none; color: white;">Learn More</a></button>
     </div>
     <div class="box ">
         <div class="picture"><img src="images/mypic.jpg" alt=""></div>
     </div>
 </div>
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <!-- about section end -->
+
+<!-- test section -->
+<style>
+  .wrapper {
+    width: 95%;
+    margin: 0 auto;
+  }
+  #search-container {
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+  }
+  #search-container input {
+    background-color: transparent;
+    border: none;
+    width: 50%;
+    border-bottom: 2px solid #2316b4;
+    padding: 1em 0.3em;
+    outline: none;
+  }
+  #search-container input:focus {
+    border-bottom-color: #6759ff;
+  }
+  #search-container button {
+    padding: .5em 2em;
+    margin-left: 1em;
+    background-color: #6759ff;
+    color: #ffffff;
+    border-radius: 20px;
+    margin-top: 0.5em;
+  }
+  #buttons{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .button-value {
+    border: 2px solid #6759ff;
+    padding: .5em 2.2em;
+    border-radius: 3em;
+    margin: 10px;
+    background-color: transparent;
+    color: #6759ff;
+    cursor: pointer;
+  }
+  .active {
+    background-color: #6759ff;
+    color: #ffffff;
+  }
+
+
+
+</style>
+
 
 
 

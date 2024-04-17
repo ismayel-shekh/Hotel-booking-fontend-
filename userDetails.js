@@ -27,7 +27,7 @@ const loadUserDetails = () => {
             <div class="info_data">
                  <div class="data">
                     <h4>Balance</h4>
-                    <p>${datax.balance} $</p>
+                    <p>${datax.balance} Taka</p>
                  </div>
                  <div class="data">
                    <h4>Phone</h4>

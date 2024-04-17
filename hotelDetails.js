@@ -61,7 +61,7 @@ const userreview = (event) =>{
     .then(data => {
         
         console.log(data)
-        window.location.href = "index.html";
+        location.reload()
     })
 }
 
@@ -97,7 +97,7 @@ const displayDetails = (hotel) =>{
               <h3 class="mt-0"><a > ${hotel.hotel_name}</a></h3>
               <ul class="room-specs">
                 <li><span class="ion-ios-people-outline"></span>Avilable Room : ${hotel.avilable_room}</li>
-                <li><span class="ion-ios-people-outline"></span> Room Price: ${hotel.room_price}</li>
+                <li><span class="ion-ios-people-outline"></span> Room Price: ${hotel.room_price} Taka</li>
                 <li><span class="ion-ios-crop"></span>Address : ${hotel.location} <sup></sup></li>
               </ul>
               <p>${hotel.details} </p>
@@ -213,7 +213,7 @@ const handleBooking = () =>{
           })
           .then((result) => {
             if (result.isConfirmed) {
-              window.location.href = "index.html";
+              window.location.href = "allhotel.html";
             }
         });
           
@@ -227,7 +227,7 @@ const handleBooking = () =>{
           })
           .then((result) => {
             if (result.isConfirmed) {
-              window.location.href = "index.html";
+              window.location.href = "allhotel.html";
             }
         });
           
