@@ -162,20 +162,22 @@
     padding: 30px;
     border: 1px solid #e6e6e6;
     border-top: none;
+
   }
   
   .room .media-body .room-specs li {
     display: inline-block;
     list-style: none;
-    margin: 0;
-    padding: 0 20px 20px 0;
+    /* margin: 0; */
+    /* padding: 0 20px 20px 0; */
+    display: flex;
   }
   
   .room .media-body .room-specs li span {
     font-size: 30px;
     position: relative;
-    top: 4px;
-    margin-right: 10px;
+    /* top: 4px; */
+    /* margin-right: 10px; */
   }
   
   .room-thumbnail-absolute .room.bg {

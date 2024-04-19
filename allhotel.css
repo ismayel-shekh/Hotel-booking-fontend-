@@ -131,6 +131,10 @@ header{
   display: inline-block;
   vertical-align: top;
 }
+.hot-card p{
+  text-align: left;
+  justify-content: left;
+}
 #drop-deg{
   display: flex;
   flex-wrap: wrap;

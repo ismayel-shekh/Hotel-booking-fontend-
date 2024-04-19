@@ -309,9 +309,9 @@ header {
   }
   
   .toggle{
-      background-color: #512da8;
+      background-color: rgb(39, 36, 36);
       height: 100%;
-      background: linear-gradient(to right, #5c6bc0, #512da8);
+      background: linear-gradient(to right, rgb(39, 36, 36), rgb(39, 36, 36));
       color: #fff;
       position: relative;
       left: -100%;
